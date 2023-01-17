@@ -59,14 +59,14 @@ function Header() {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: isMobile && 'center', alignItems: 'center' }}>
           <Grid container>
-            <Grid item xs={6} sm={4}>
+            <Grid item xs={9} sm={4}>
               <Box sx={titleLinkStyle.box}>
                 <Typography variant="h6" noWrap component={NavLink} to="/" sx={titleLinkStyle.text}>
-                  手工花生糖
+                  阿美姐手工花生糖
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} sm={8}>
+            <Grid item xs={3} sm={8}>
               <Box sx={navLinkStyle.box}>
                 {isMobile ? (
                   <IconButton style={{ color: 'white' }} onClick={toggleNav(!isNavOpen)}>

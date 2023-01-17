@@ -6,5 +6,10 @@ const PAGE_NAVIGATION = [
   { name: '購物車', link: 'cart' },
 ];
 
-// eslint-disable-next-line import/prefer-default-export
-export { PAGE_NAVIGATION };
+const SOCIAL_LINKS = [
+  { name: 'Facebook', link: '', color: '#3D5B94' },
+  { name: 'Line', link: '', color: '#6DCD9A' },
+  { name: 'Instagram', link: '', color: '#E4405F' },
+];
+
+export { PAGE_NAVIGATION, SOCIAL_LINKS };

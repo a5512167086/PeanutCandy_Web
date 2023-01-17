@@ -1,43 +1,29 @@
-const titleLinkStyle = {
+const footerTitleStyle = {
   box: {
-    height: '100%',
     display: 'flex',
-    alignItems: 'center',
+    paddingY: '10px',
+    backgroundColor: '#adadad',
   },
   text: {
-    mr: 2,
-    fontFamily: 'monospace',
-    fontWeight: 700,
-    color: 'white',
-    textDecoration: 'none',
-  },
-};
-
-const navLinkStyle = {
-  box: {
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  link: {
     fontSize: {
-      lg: '20px',
-      md: '15px',
+      xs: '12px',
+      sm: '16px',
     },
-    fontFamily: 'monospace',
-    marginX: '15px',
+  },
+};
+
+const socialLinkStyle = {
+  box: { display: 'flex', paddingY: '10px' },
+  text: {
+    fontSize: {
+      xs: '12px',
+      sm: '16px',
+    },
     color: 'white',
-    textDecoration: 'none',
+    borderRadius: 0,
+    padding: 0,
+    height: '100%',
   },
 };
 
-const mobileNavLinkStyle = {
-  box: { justifyContent: 'center', marginY: '10px' },
-  link: {
-    color: 'black',
-    textDecoration: 'none',
-  },
-};
-
-export { titleLinkStyle, navLinkStyle, mobileNavLinkStyle };
+export { footerTitleStyle, socialLinkStyle };
