@@ -14,24 +14,19 @@ import {
   Button,
   useMediaQuery,
 } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import { PAGE_NAVIGATION } from '@/config/config';
-import { titleLinkStyle, navLinkStyle, mobileNavLinkStyle } from './HeaderStyle';
+import { titleLinkStyle, navLinkStyle, mobileNavLinkStyle } from './headerStyle';
 
 function DrawerList() {
-  const delayNavigate = (link) => async () => {
-    await setTimeout(() => {
-      window.location.href = link;
-    }, 300);
-  };
-
   return (
     <Box sx={{ width: 'auto' }}>
       <List>
         {PAGE_NAVIGATION.map(({ name, link }) => (
           <div key={name}>
-            <ListItem onClick={delayNavigate(link)} component={'a'} sx={mobileNavLinkStyle.box}>
+            <ListItem component={NavLink} to={link} sx={mobileNavLinkStyle.box}>
               <Typography noWrap sx={mobileNavLinkStyle.link}>
                 {name}
               </Typography>
@@ -66,7 +61,7 @@ function Header() {
           <Grid container>
             <Grid item xs={6} sm={4}>
               <Box sx={titleLinkStyle.box}>
-                <Typography variant="h6" noWrap component="a" href="/" sx={titleLinkStyle.text}>
+                <Typography variant="h6" noWrap component={NavLink} to="/" sx={titleLinkStyle.text}>
                   手工花生糖
                 </Typography>
               </Box>
@@ -79,12 +74,11 @@ function Header() {
                   </IconButton>
                 ) : (
                   PAGE_NAVIGATION.map(
-                    ({ name, link }) =>
-                      name !== '首頁' && (
-                        <Button key={name} variant="p" component="a" href={link} sx={navLinkStyle.link}>
-                          {name}
-                        </Button>
-                      ),
+                    ({ name, link }) => name !== '首頁' && (
+                    <Button key={name} variant="p" component={NavLink} to={link} sx={navLinkStyle.link}>
+                      {name}
+                    </Button>
+                    ),
                   )
                 )}
               </Box>

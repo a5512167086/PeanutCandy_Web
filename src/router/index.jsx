@@ -1,11 +1,17 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import HomePage from '@/pages/HomePage';
+import Layout from '@/components/Layout/Layout';
+import routes from '@/config/router';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
+    element: <Layout />,
+    children: routes.map((route) => ({
+      index: route.path === '/',
+      path: route.path === '/' ? undefined : route.path,
+      element: route.element,
+    })),
   },
 ]);
 
